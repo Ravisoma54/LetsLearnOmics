@@ -4,32 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LetsLearnOmics</title>
-<link rel="icon" href="letslearnomics_logo.png">
+<link rel="icon" href="round logo of LetsLearnOmics-2.png">
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_YOUR_GA4_ID"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);} 
 gtag('js', new Date());
 
-gtag('config', 'G-XXXXXXXXXX');
+gtag('config', 'G-REPLACE_WITH_YOUR_GA4_ID');
 </script>
 <style>
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f6fb;color:#333;scroll-behavior:smooth}
 
 /* HEADER */
-header{background:linear-gradient(270deg,#1e3c72,#2a5298,#1e3c72);background-size:400% 400%;animation:gradientMove 12s ease infinite;color:white;display:flex;align-items:center;gap:25px;padding:40px 40px}
+header{background:linear-gradient(270deg,#1e3c72,#2a5298,#1e3c72);background-size:400% 400%;animation:gradientMove 12s ease infinite;color:white;padding:40px 20px}
+
+.header-inner{max-width:1100px;margin:auto;position:relative;display:flex;align-items:center;justify-content:center;text-align:center}
+
+.header-text{max-width:800px;margin:auto;text-align:center;margin-left:260px}
+
+.header-logo{position:absolute;left:30px;width:150px;height:150px;border-radius:50%;object-fit:cover}
 @keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 header h1{margin:0;font-size:46px;letter-spacing:1px}
 header p{margin-top:12px;font-size:20px;opacity:.95}
 
 .header-logo{
-width:180px;
+width:150px;
+height:150px;
 border-radius:50%;
-background:none;
-padding:0;
-box-shadow:0 6px 16px rgba(0,0,0,0.35);
 object-fit:cover;
 }
 .omics-met{color:#7CFFB2;font-weight:bold}
@@ -38,7 +42,7 @@ object-fit:cover;
 .omics-bio{color:#FFADAD;font-weight:bold}
 
 /* NAVIGATION */
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:#111;padding:12px;gap:10px}
+nav{display:flex;align-items:center;justify-content:space-between;background:#111;padding:8px 20px;max-width:1100px;margin:auto;gap:6px}
 nav a{color:white;text-decoration:none;padding:8px 14px;border-radius:6px;font-size:14px;display:block}
 nav a:hover{background:#2a5298}
 
@@ -97,14 +101,16 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 <body>
 
 <header>
-<img src="letslearnomics_logo.png" alt="LetsLearnOmics Logo" class="header-logo">
+<div class="header-inner">
+<img src="round logo of LetsLearnOmics-2.png" alt="LetsLearnOmics Logo" class="header-logo">
 
-<div>
+<div class="header-text">
 <h1>🧬 LetsLearnOmics 🧪</h1>
 <p style="font-size:18px;margin-top:8px;opacity:.9;">A platform for learning modern omics technologies and bioinformatics tools</p>
 <p>Learn <span class="omics-met">Metabolomics</span> • <span class="omics-pro">Proteomics</span> • <span class="omics-tra">Transcriptomics</span> • <span class="omics-bio">Bioinformatics</span></p>
 </div>
 
+</div>
 </header>
 
 <nav>
@@ -139,7 +145,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <a href="#contact">Contact</a>
 
-<div class="search-box" style="margin-left:auto;">
+<div class="search-box">
 <input id="searchInput" type="text" placeholder="Search...">
 <button onclick="searchSite()">🔎</button>
 </div>
