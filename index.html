@@ -8,19 +8,30 @@
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f6fb;color:#333;scroll-behavior:smooth}
 
 /* HEADER */
-header{background:linear-gradient(135deg,#1e3c72,#2a5298);color:white;text-align:center;padding:70px 20px}
+header{background:linear-gradient(270deg,#1e3c72,#2a5298,#1e3c72);background-size:400% 400%;animation:gradientMove 12s ease infinite;color:white;text-align:center;padding:70px 20px}
+@keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 header h1{margin:0;font-size:46px;letter-spacing:1px}
-header p{margin-top:12px;font-size:18px;opacity:.9}
+header p{margin-top:12px;font-size:20px;opacity:.95}
+.omics-met{color:#7CFFB2;font-weight:bold}
+.omics-pro{color:#FFD166;font-weight:bold}
+.omics-tra{color:#A0C4FF;font-weight:bold}
+.omics-bio{color:#FFADAD;font-weight:bold}
 
 /* NAVIGATION */
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:#111;padding:12px}
-nav a{color:white;text-decoration:none;margin:6px 10px;padding:8px 14px;border-radius:6px;font-size:14px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;background:#111;padding:12px;gap:10px}
+nav a{color:white;text-decoration:none;padding:8px 14px;border-radius:6px;font-size:14px;display:block}
 nav a:hover{background:#2a5298}
 
+/* DROPDOWN MENU */
+.nav-item{position:relative}
+.dropdown{display:none;position:absolute;background:#111;top:36px;left:0;min-width:180px;border-radius:6px;box-shadow:0 6px 14px rgba(0,0,0,.2);z-index:100}
+.dropdown a{padding:10px;font-size:13px}
+.nav-item:hover .dropdown{display:block}
+
 /* SEARCH */
-.search-box{display:flex;justify-content:center;margin-top:20px;gap:6px}
-.search-box input{padding:10px;width:260px;border-radius:6px;border:none}
-.search-box button{padding:10px 14px;border:none;border-radius:6px;background:#ffd43b;cursor:pointer;font-size:16px}
+.search-box{display:flex;align-items:center;gap:6px}
+.search-box input{padding:6px 8px;width:180px;border-radius:6px;border:none}
+.search-box button{padding:6px 10px;border:none;border-radius:6px;background:#ffd43b;cursor:pointer;font-size:14px}
 .search-box button:hover{background:#ffcc00}
 
 section{padding:70px 20px;text-align:center}
@@ -66,34 +77,79 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 <body>
 
 <header>
-<h1>LetsLearnOmics</h1>
-<p>Learn Metabolomics• Proteomics • Transcriptomics • Bioinformatics</p>
+<h1>🧬 LetsLearnOmics 🧪</h1>
+<p style="font-size:18px;margin-top:8px;opacity:.9;">A platform for learning modern omics technologies and bioinformatics tools</p>
+<p>Learn <span class="omics-met">Metabolomics</span> • <span class="omics-pro">Proteomics</span> • <span class="omics-tra">Transcriptomics</span> • <span class="omics-bio">Bioinformatics</span></p>
 
-<div class="search-box">
-<input id="searchInput" type="text" placeholder="Search genomics, tools, tutorials...">
-<button onclick="searchSite()">🔎</button>
-</div>
 </header>
 
 <nav>
 <a href="#home">Home</a>
-<a href="#omics">Omics</a>
-<a href="#tools">Tools</a>
+
+<div class="nav-item">
+<a href="#omics">Omics ▾</a>
+<div class="dropdown">
+<a href="#omics">Omics Fields</a>
+<a href="#databases">Omics Databases</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#tools">Tools ▾</a>
+<div class="dropdown">
+<a href="#tools">Bioinformatics Tools</a>
+<a href="#software">Omics Software</a>
+<a href="#workflows">Workflows</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#resources">Resources ▾</a>
+<div class="dropdown">
+<a href="#resources">Learning Resources</a>
+<a href="#downloads">Practice Data</a>
 <a href="#tutorials">Videos</a>
-<a href="#resources">Resources</a>
+<a href="#tutorials2">Tutorials</a>
+</div>
+</div>
+
 <a href="#contact">Contact</a>
+
+<div class="search-box" style="margin-left:auto;">
+<input id="searchInput" type="text" placeholder="Search...">
+<button onclick="searchSite()">🔎</button>
+</div>
+
 </nav>
 
 <section id="home">
 <div class="container">
 <h2>Welcome to LetsLearnOmics</h2>
 <p>An educational platform for learning modern omics sciences and bioinformatics tools.</p>
+
+<div class="card" style="max-width:700px;margin:30px auto 0;">
+<h3>Our Mission</h3>
+<p>The mission of LetsLearnOmics is to make omics sciences and bioinformatics tools accessible to students, researchers, and educators worldwide. The platform aims to provide easy‑to‑understand tutorials, practical resources, and curated bioinformatics tools to support learning in genomics, proteomics, metabolomics, transcriptomics, and multi‑omics data analysis.</p>
+</div>
+
+</div>
+</section>
+
+<section id="founder">
+<div class="container">
+<h2>🧑‍🔬 About the Founder</h2>
+<div class="card" style="max-width:600px;margin:auto;">
+<h3>Ravi Somabattini</h3>
+<p><strong>Founder & Creator of LetsLearnOmics</strong></p>
+<p>Ravi Somabattini is an omics and bioinformatics enthusiast focused on making advanced biological data analysis accessible to students and early‑career researchers. His interests include genomics, proteomics, metabolomics, transcriptomics, and computational biology.</p>
+<p>Through LetsLearnOmics, he aims to simplify complex bioinformatics workflows and provide educational resources, tools, and tutorials that help learners understand modern omics technologies and data analysis approaches.</p>
+</div>
 </div>
 </section>
 
 <section id="omics">
 <div class="container">
-<h2>Omics Fields</h2>
+<h2>🧬 Omics Fields</h2>
 <div class="cards">
 <div class="card"><h3>Genomics</h3><p>Study of entire genomes and DNA sequencing technologies.</p></div>
 <div class="card"><h3>Proteomics</h3><p>Large scale analysis of proteins and their biological functions.</p></div>
@@ -105,24 +161,24 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="tools">
 <div class="container">
-<h2>Bioinformatics Tools</h2>
+<h2>🔬 Bioinformatics Tools</h2>
 <div class="tools-grid">
-<div class="tool"><h3>NCBI BLAST</h3><p>Sequence similarity search tool.</p><a href="https://blast.ncbi.nlm.nih.gov" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>UniProt</h3><p>Protein sequence and annotation database.</p><a href="https://www.uniprot.org" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>Galaxy</h3><p>Workflow-based bioinformatics platform.</p><a href="https://usegalaxy.org" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>PDB</h3><p>Protein structure database.</p><a href="https://www.rcsb.org" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>GATK</h3><p>Variant discovery toolkit for genomic sequencing data.</p><a href="https://gatk.broadinstitute.org" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>Bismark</h3><p>Tool for DNA methylation analysis from bisulfite sequencing.</p><a href="https://www.bioinformatics.babraham.ac.uk/projects/bismark/" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>PLINK</h3><p>Genome‑wide association studies and population genetics.</p><a href="https://www.cog-genomics.org/plink/" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>DESeq2</h3><p>Differential gene expression analysis for RNA‑seq data.</p><a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>STAR Aligner</h3><p>Fast RNA‑seq read alignment to reference genomes.</p><a href="https://github.com/alexdobin/STAR" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>MaxQuant</h3><p>Quantitative proteomics analysis for mass‑spectrometry data.</p><a href="https://maxquant.org" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>XCMS</h3><p>Preprocessing and peak detection for metabolomics MS data.</p><a href="https://xcmsonline.scripps.edu" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>MetaboAnalyst</h3><p>Web platform for metabolomics statistical analysis.</p><a href="https://www.metaboanalyst.ca" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>mixOmics</h3><p>R package for multi‑omics data integration and visualization.</p><a href="https://mixomics.org" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>MOFA2</h3><p>Framework for discovering variation in multi‑omics datasets.</p><a href="https://biofam.github.io/MOFA2/" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>WGCNA</h3><p>Gene co-expression network analysis for omics datasets.</p><a href="https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/" target="_blank">Open Tool</a></div>
-<div class="tool"><h3>DAVID</h3><p>Functional annotation and enrichment analysis for large gene lists.</p><a href="https://davidbioinformatics.nih.gov/" target="_blank">Open Tool</a></div>
+<div class="tool"><h3><a href="https://blast.ncbi.nlm.nih.gov" target="_blank">NCBI BLAST</a></h3><p>Sequence similarity search tool.</p></div>
+<div class="tool"><h3><a href="https://www.uniprot.org" target="_blank">UniProt</a></h3><p>Protein sequence and annotation database.</p></div>
+<div class="tool"><h3><a href="https://usegalaxy.org" target="_blank">Galaxy</a></h3><p>Workflow-based bioinformatics platform.</p></div>
+<div class="tool"><h3><a href="https://www.rcsb.org" target="_blank">PDB</a></h3><p>Protein structure database.</p></div>
+<div class="tool"><h3><a href="https://gatk.broadinstitute.org" target="_blank">GATK</a></h3><p>Variant discovery toolkit for genomic sequencing data.</p></div>
+<div class="tool"><h3><a href="https://www.bioinformatics.babraham.ac.uk/projects/bismark/" target="_blank">Bismark</a></h3><p>Tool for DNA methylation analysis from bisulfite sequencing.</p></div>
+<div class="tool"><h3><a href="https://www.cog-genomics.org/plink/" target="_blank">PLINK</a></h3><p>Genome‑wide association studies and population genetics.</p></div>
+<div class="tool"><h3><a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html" target="_blank">DESeq2</a></h3><p>Differential gene expression analysis for RNA‑seq data.</p></div>
+<div class="tool"><h3><a href="https://github.com/alexdobin/STAR" target="_blank">STAR Aligner</a></h3><p>Fast RNA‑seq read alignment to reference genomes.</p></div>
+<div class="tool"><h3><a href="https://maxquant.org" target="_blank">MaxQuant</a></h3><p>Quantitative proteomics analysis for mass‑spectrometry data.</p></div>
+<div class="tool"><h3><a href="https://xcmsonline.scripps.edu" target="_blank">XCMS</a></h3><p>Preprocessing and peak detection for metabolomics MS data.</p></div>
+<div class="tool"><h3><a href="https://www.metaboanalyst.ca" target="_blank">MetaboAnalyst</a></h3><p>Web platform for metabolomics statistical analysis.</p></div>
+<div class="tool"><h3><a href="https://mixomics.org" target="_blank">mixOmics</a></h3><p>R package for multi‑omics data integration and visualization.</p></div>
+<div class="tool"><h3><a href="https://biofam.github.io/MOFA2/" target="_blank">MOFA2</a></h3><p>Framework for discovering variation in multi‑omics datasets.</p></div>
+<div class="tool"><h3><a href="https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/" target="_blank">WGCNA</a></h3><p>Gene co-expression network analysis for omics datasets.</p></div>
+<div class="tool"><h3><a href="https://davidbioinformatics.nih.gov/" target="_blank">DAVID</a></h3><p>Functional annotation and enrichment analysis for large gene lists.</p></div>
 </div>
 </div>
 </div>
@@ -130,7 +186,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="software">
 <div class="container">
-<h2>Omics Analysis Software</h2>
+<h2>💻 Omics Software</h2>
 <div class="tools-grid">
 
 <div class="tool"><h3>Python</h3><p>Programming language widely used for bioinformatics, data science, and omics analysis.</p><a href="https://www.python.org/downloads/" target="_blank">Download Python</a></div>
@@ -170,7 +226,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="resources">
 <div class="container">
-<h2>Learning Resources</h2>
+<h2>📚 Learning Resources</h2>
 <div class="resources">
 <div class="resource"><h3>Genomics Notes</h3><p>Introduction to genome sequencing.</p><a href="#">Download</a></div>
 <div class="resource"><h3>Proteomics Guide</h3><p>Protein identification basics.</p><a href="#">Download</a></div>
@@ -181,7 +237,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="databases">
 <div class="container">
-<h2>Omics Databases</h2>
+<h2>🧬 Omics Databases</h2>
 <div class="tools-grid">
 <div class="tool"><h3>NCBI</h3><p>Central resource for genomic and biomedical information.</p><a href="https://www.ncbi.nlm.nih.gov" target="_blank">Open Database</a></div>
 <div class="tool"><h3>Ensembl</h3><p>Genome browser for vertebrate genomes and annotations.</p><a href="https://www.ensembl.org" target="_blank">Open Database</a></div>
@@ -195,7 +251,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="workflows">
 <div class="container">
-<h2>Bioinformatics Workflows</h2>
+<h2>📊 Bioinformatics Workflows</h2>
 <div class="cards">
 <div class="card"><h3>RNA‑seq Workflow</h3><p>FASTQ → Quality Control (FastQC) → Alignment (STAR/HISAT2) → Counting (featureCounts) → Differential Expression (DESeq2) → Visualization (R/Python).</p></div>
 <div class="card"><h3>Proteomics Workflow</h3><p>MS Raw Data → MaxQuant Processing → Protein Identification → Quantification → Functional Analysis.</p></div>
@@ -207,7 +263,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="tutorials2">
 <div class="container">
-<h2>Beginner Bioinformatics Tutorials</h2>
+<h2>📚 Bioinformatics Tutorials</h2>
 <div class="cards">
 <div class="card"><h3>Introduction to Genomics</h3><p>Understanding genomes, sequencing technologies and variant analysis.</p></div>
 <div class="card"><h3>RNA‑seq Analysis with R</h3><p>Learn differential gene expression analysis using DESeq2.</p></div>
@@ -219,7 +275,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 
 <section id="downloads">
 <div class="container">
-<h2>Practice Data & Learning Materials</h2>
+<h2>📚 Practice Data & Learning Materials</h2>
 <div class="resources">
 <div class="resource"><h3>RNA‑seq Example Dataset</h3><p>Practice dataset for differential expression analysis.</p><a href="#">Download Dataset</a></div>
 <div class="resource"><h3>FASTA Example Files</h3><p>Example sequence files for learning sequence analysis.</p><a href="#">Download Files</a></div>
@@ -229,16 +285,7 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 </div>
 </section>
 
-<section id="founder">
-<div class="container">
-<h2>About the Founder</h2>
-<div class="card" style="max-width:600px;margin:auto;">
-<h3>Ravi Somabattini</h3>
-<p><strong>Founder & Creator of LetsLearnOmics</strong></p>
-<p>LetsLearnOmics was created to help students and researchers learn genomics, proteomics, metabolomics and bioinformatics tools through tutorials, workflows and educational resources.</p>
-</div>
-</div>
-</section>
+
 
 <section id="contact">
 <h2>Contact</h2>
